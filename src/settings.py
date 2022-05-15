@@ -7,3 +7,6 @@ class Settings():
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (119, 136, 153)
+
+        # Configurações da espaçonave
+        self.ship_speed_factor = 1.5
