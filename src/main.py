@@ -17,6 +17,7 @@ def run_game():
 
     # Cria uma espaçonave
     ship = Ship(ai_settings, screen)
+ 
     # Cria um grupo no qual serão armazenados os projéteis
     bullets = Group()
 
