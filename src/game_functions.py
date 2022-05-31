@@ -20,13 +20,17 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
     if event.key == pygame.K_RIGHT:
         # Move a nave para a direita
         ship.moving_right = True
+
     elif event.key == pygame.K_LEFT:
         # Move a nave para a esuerda
         ship.moving_left = True
+
     elif event.key == pygame.K_SPACE:
         # Cria um novo projétil e o adiciona ao grupo de projéteis
         fire_bullet(ai_settings, screen, ship, bullets)
+
     elif event.key == pygame.K_q:
+        # Fecha o jogo com a tecla Q
         sys.exit()
 
 
@@ -37,14 +41,16 @@ def check_keyup_events(event, ship):
         ship.moving_left = False
 
 
-def update_screen(ai_settings, screen, ship, bullets):
+def update_screen(ai_settings, screen, ship, alien, bullets):
     """Atualiza as imagens na tela e alterna para a nova tela."""
     # Redesenha a tela a cada passagem pelo laço
     screen.fill(ai_settings.bg_color)
+
     # Redesenha todos os projéteis atrás da espaçonave e dos alienígenas
     for bullet in bullets.sprites():
         bullet.draw_bullet()
     ship.blitme()
+    alien.blitme()
 
     # Deixa a tela mais recente visível
     pygame.display.flip()
